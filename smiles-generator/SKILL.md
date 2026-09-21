@@ -85,7 +85,9 @@ Quaternary ammonium and tetrasubstituted borate qualify.
 This is machine-checkable; see Step 3.
 - **Unspecified stereo** - a genuine stereogenic element carrying no marker.
 Stereogenicity is a property of the graph, not of the string, so deleting `@` from a stereocentre makes the molecule *ambiguous*, not achiral.
-If someone asks for a molecule that "completely specifies a structure" or a "non-isomeric" one, they mean zero unspecified elements - which is a much stronger requirement than zero `@` characters.
+If someone asks for a molecule that "completely specifies a structure", they mean zero unspecified elements - which is a much stronger requirement than zero `@` characters.
+**"Non-isomeric" is the opposite request**: it is the standard name for a SMILES written *without* stereo or isotope information, what `Chem.MolToSmiles(mol, isomericSmiles=False)` emits (`C[C@H](O)CC` → `CCC(C)O`).
+The molecule keeps its stereogenic elements but the string stops describing them.
 - **Non-stereogenic double bond** - a C=C or C=O that *cannot* express E/Z because one end carries two identical substituents.
 Removing `/` and `\` from a stereogenic bond produces an unspecified one, not a non-stereogenic one.
 - **"Stereocentres"** is often used loosely for the whole stereo inventory, atoms *and* bonds.

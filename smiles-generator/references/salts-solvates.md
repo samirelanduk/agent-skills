@@ -131,7 +131,7 @@ The real compound comes from D-glucose - add the tags if the spec needs them.
 | adipate | `[O-]C(=O)CCCCC(=O)[O-]` | −2 | →0 | 10 | |
 | fumarate | `[O-]C(=O)/C=C/C(=O)[O-]` | −2 | →0 | 8 | 1 specified bond (E) |
 | maleate | `[O-]C(=O)/C=C\C(=O)[O-]` | −2 | →0 | 8 | 1 specified bond (Z) |
-| (S)-malate | `[O-]C(=O)C[C@@H](O)C(=O)[O-]` | −2 | →0 | 9 | 1 specified |
+| (S)-malate | `[O-]C(=O)C[C@H](O)C(=O)[O-]` | −2 | →0 | 9 | 1 specified (S) |
 | L-(+)-tartrate | `[O-]C(=O)[C@H](O)[C@@H](O)C(=O)[O-]` | −2 | →0 | 10 | 2 specified, (R,R) |
 | citrate | `[O-]C(=O)CC(O)(CC(=O)[O-])C(=O)[O-]` | −3 | →0 | 13 | none - the central C has two identical arms |
 | embonate (pamoate) | `Oc1c(Cc2c(O)c3ccccc3cc2C(=O)[O-])cc2ccccc2c1C(=O)[O-]` | −2 | →0 | 29 | |

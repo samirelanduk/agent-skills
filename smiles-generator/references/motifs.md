@@ -268,9 +268,10 @@ Cheap pre-check first: if the two canonical SMILES are already identical you hav
 - **Keto/enol of any kind.**
 `CC(=O)C` / `CC(O)=C` hash differently.
 RDKit's heteroatom tautomer rules only collapse certain heteroatom tautomers, and carbon-to-oxygen proton shifts are not among them.
-- **2-pyridone written in Kekulé form.**
-`O=C1C=CC=CN1` / `OC1=CC=CN=C1` fail, while the aromatic lowercase spelling of the same pair succeeds.
-For ring tautomers, always write the aromatic form.
+
+Kekulé spelling is *not* itself a problem - `O=C1C=CC=CN1` / `OC1=NC=CC=C1` share a hash exactly as the aromatic `O=c1cccc[nH]1` / `Oc1ccccn1` do, and the aminopyrimidine and uracil pairs above are Kekulé.
+What does go wrong is writing the second structure by hand and misplacing a heteroatom: `OC1=CC=CN=C1` looks like 2-hydroxypyridine and is 3-hydroxypyridine, which of course fails.
+Canonicalise both members and read them back before concluding a pair doesn't hash.
 
 `TautomerEnumerator()` destroys stereo by default - `CleanupParameters` has `removeSp3Stereo` and `removeBondStereo` both set to `True`.
 
